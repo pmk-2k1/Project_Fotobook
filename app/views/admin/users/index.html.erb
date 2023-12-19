@@ -1,0 +1,38 @@
+  <%= render "admin/header"%>
+<section class="row">
+  <%= render "admin/nav_left" %>
+  <div class="col-xl-8 nav-bw px-0 nav_bww">
+    <div id="content_profile_admin">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Last Login</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@users.each do |user|%>
+            <tr>
+              <td><%=user.first_name.capitalize()%></td>
+              <td><%=user.last_name.capitalize()%></td>
+              <td><%=user.email%></td>
+              <td><%=user.updated_at.strftime("%H:%M %Y/%m/%d")%></td>
+              <td>
+                <%=button_to "Edit",edit_admin_user_path(user.id), method: :get, class:"admin_edit"%>
+                <%=button_to "Delete", admin_user_path(user.id), method: :delete, class: "admin_destroy", data:{confirm: "Are you sure?" }%>
+              </td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+      <div class="kami">
+        <%= paginate @users, window: 2 %>
+      </div>
+    </div>
+  </div>
+  <%= render "admin/nav_right" %>
+  <%=render 'admin/footer'%>
+</section>

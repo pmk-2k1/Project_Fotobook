@@ -1,0 +1,1330 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+/*---------------------HEADER-----------------*/
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.row .col {
+  background: #3C5999;
+}
+
+.row {
+  height: 42px;
+}
+
+.fotobook {
+  color: white;
+  font-weight: 700;
+  line-height: 23px;
+  float: right;
+  margin-bottom: 0;
+  margin-top: 7px;
+  font-size: 20px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+.fotobook:hover {
+  color: white;
+}
+
+#search {
+  height: 32px;
+  width: 70%;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  padding-left: 20px;
+  font-weight: 300;
+}
+
+
+.log {
+  margin-bottom: 0;
+  padding-top: 8px;
+
+}
+
+.log .signed {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 17.58px;
+  padding-left: 70px;
+}
+
+// .log .signin {
+//   text-decoration: none;
+//   color: #F8F8F8;
+//   font-weight: 700;
+//   font-size: 15px;
+//   line-height: 17.58px;
+// }
+
+// .login {
+//   color: #fff;
+//   font-weight: 700;
+//   font-size: 15px;
+//   line-height: 17.58px;
+//   /* margin: 12px 0 12px 0; */
+//   padding-left: 70px;
+//   text-decoration: none;
+// }
+
+// .login:hover {
+//   color: #BDBDBD;
+// }
+
+
+/* -----------PAGE LOGIN---------------- */
+
+
+.main {
+  margin-top: 120px;
+  height: 650px;
+  width: 346px;
+  text-align: center;
+}
+
+.title {
+  height: 50px;
+  width: 400px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 47px;
+  margin-bottom: 0;
+  font-style: none;
+  color: #3C5999;
+}
+
+.frame-icon {
+  width: 100%;
+  height: 90px;
+  border: 2px solid #E0E0E0;
+  border-radius: 12px;
+  // text-align: center;
+}
+
+.fab {
+  font-size: 60px;
+  margin: 15px 20px 15px 20px;
+}
+
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-facebook {
+  color: #3C5999;
+}
+
+
+.fa-twitter-square {
+  color: #2aade9;
+}
+
+.form-login {
+  height: 390px;
+  width: 346px;
+  border-radius: 10px;
+  background-color: #F9F9F9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+// .tron {
+
+//   height: 99px;
+//   width: 99px;
+//   border-radius: 50%;
+//   background: lightgray;
+//   margin: 0 auto 0 auto;
+//   padding-top: 20px;
+// }
+
+.ava_profile {
+  height: 99px;
+  width: 99px;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+
+.fa-user-slash {
+  font-size: 60px;
+  color: rgb(184, 184, 184);
+}
+
+#email {
+  border: 1px solid #BDBDBD;
+  border-radius: 5px 5px 0px 0px;
+  background: #FFFFFF;
+  height: 40px;
+  width: 310px;
+  padding-left: 10px;
+}
+
+#password {
+  border: 1px solid #BDBDBD;
+  border-radius: 0px 0px 5px 5px;
+  background: #FFFFFF;
+  height: 40px;
+  width: 310px;
+  padding-left: 10px;
+}
+
+#button-login {
+  width: 108px;
+  height: 44px;
+  border-radius: 5px;
+  background: #3C5999;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  line-height: 18px;
+}
+
+.forg {
+  margin: 30px 0 0 20px;
+  float: left;
+}
+
+.forgot {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  color: #3C5999;
+  text-decoration: none;
+  text-align: center;
+}
+
+.cre {
+  margin: 30px 20px 0 0;
+  float: right;
+}
+
+.create {
+  font-size: 15px;
+  color: #3C5999;
+  font-weight: 400;
+  line-height: 17px;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+
+/*---------------------PAGE RIGISTER---------------*/
+
+.form-signup {
+  height: 485px;
+  width: 346px;
+  background: #F9F9F9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.font-first {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 30px;
+  padding: 30px 0 0 30px;
+}
+
+#formregister {
+  padding-left: 10px;
+  margin-left: 30px;
+  height: 44px;
+  width: 286px;
+  background: #FFFFFF;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+}
+
+.font-last {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0 0 0 30px;
+}
+
+#button-singup {
+  width: 108px;
+  height: 44px;
+  border-radius: 5px;
+  background: #3C5999;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  line-height: 18px;
+  margin-left: 120px;
+}
+
+.min_pass {
+  padding: 0 0 0 30px;
+  opacity: 0.25;
+}
+
+/*---------- FORGOT PASSWORD --------------------------------*/
+.form-forgot-password {
+  height: 300px;
+  width: 346px;
+  background: #F9F9F9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: left;
+}
+
+#send-mail {
+  background-color: #3C5999;
+  color: #FFFFFF;
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 35px;
+}
+
+/*----------------------------Feed Photos----------*/
+
+.avatar {
+  text-align: right;
+  padding-top: 4px;
+}
+
+.col img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+.col .name {
+  margin-bottom: 0;
+  height: 30px;
+  text-decoration: none;
+  color: #F8F8F8;
+  font-weight: 700;
+  font-size: 17px;
+  padding-left: 10px;
+
+}
+
+.name:hover {
+  color: #F8F8F8;
+}
+
+
+.logout {
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 17.58px;
+  padding-left: 70px;
+  text-decoration: none;
+}
+
+.logout:hover {
+  color: #F8F8F8;
+}
+
+section {
+  position: relative;
+  top: 42px;
+  margin: 0;
+}
+
+.nav-left,
+.nav-right {
+  background: #F8F8F8;
+}
+
+.nav-left {
+  align-items: center;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-link {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.nav-link.feeds {
+  padding-top: 50px;
+  margin-top: 40px;
+  color: #828282;
+  text-decoration: none;
+}
+
+a.nav-link.feeds:focus {
+  color: #3C5999!important;
+}
+
+.nav-link.discover {
+  color: #828282;
+  text-decoration: none;
+
+}
+
+.nav-link.discover:focus {
+  color: #3C5999;
+}
+
+.nav-bw {
+  background: #FFFFFF;
+  margin-top: 10px;
+  text-align: center;
+  top: 10px;
+}
+#photo {
+  position: absolute;
+  display: block;
+  border: 1px solid #3C5999;
+  width: 71px;
+  height: 36px;
+  border-radius: 3px 0px 0px 3px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #3C5999;
+  background-color: #FFFFFF;
+  margin: 20px 0 0 29.6%;
+}
+
+#photo:focus {
+  background-color: #3C5999;
+  color: #FFFFFF;
+}
+
+#album {
+  position:sticky;
+  display: block;
+  border: 1px solid #3C5999;
+  width: 71px;
+  height: 36px;
+  border-radius: 0 3px 3px 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #3C5999;
+  background-color: #FFFFFF;
+  clear: left;
+  margin: 20px 0 0 49.75%;
+}
+
+#album:focus {
+  background-color: #3C5999;
+  color: #FFFFFF;
+}
+
+.col-left,
+.col-right {
+  padding: 40px 5px 0 5px;
+}
+
+.pic {
+  width: 48%;
+  height: 250px;
+  margin: 1%;
+  background: #F8F8F8;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px 0px 0px 3px;
+  float: left;
+}
+
+.screen {
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+.rounded-circle {
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin: 10px 0 0 10px;
+}
+
+.user {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  float: left;
+  padding: 20px 0 0 15px;
+  color: #3C5999;
+}
+
+.tit {
+  text-align: left;
+  font-weight: 700;
+  margin: 15px 0 0 245.76px;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.tex {
+  text-align: left;
+  font-size: 13px;
+  padding-left: 15px;
+  margin: 5px 0 0 245.76px;
+}
+
+.fa-heart {
+  float: left;
+  margin: 20px 0 0 5px;
+  color: #3C5999;
+}
+
+.date {
+  font-weight: 400px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #BDBDBD;
+  float: right;
+  margin: 20px 10px 0 0;
+}
+
+
+.fa-spinner {
+  margin: 30px 0 20px 48%;
+  color: black;
+  font-size: 50px;
+  float: left;
+}
+
+/*-----------FEED-ALBUMS-----------*/
+.alb{
+  width: 48%;
+  height: 250px;
+  margin: 1%;
+  background: #F8F8F8;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px 0px 0px 3px;
+  display: inline-block;
+  float: left;
+
+}
+.feed_album1{
+  display: block;
+  float: left;
+  border: 1px solid #FFFFFF;
+  transform: rotate(10deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+  margin: 25px 0 0 20px;
+}
+.feed_album2{
+  display: block;
+  float: left;
+  border: 1px solid #FFFFFF;
+  transform: rotate(6deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+  margin: 25px 0 0 20px;
+}
+.feed_album3{
+  display: block;
+  float: left;
+  border: 1px solid #FFFFFF;
+  transform: rotate(0deg);
+  position: relative;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+  margin: 25px 10px 0 20px;
+}
+/*----------New Photo-------------*/
+
+h4 {
+  margin: 20px 0 0 30px;
+  float: left;
+}
+
+hr {
+  margin: 20px 30px 20px 30px;
+  clear: left;
+  background-color: currentColor;
+  color: inherit;
+  opacity: 0.25;
+}
+
+div.field-title {
+  margin: 0 0 10px 30px;
+  display: block;
+  clear: left;
+  float: left;
+  text-align: left;
+
+}
+
+div.field-description {
+  margin: 0 30px 10px 0;
+  display: block;
+  float: right;
+  text-align: left;
+
+}
+
+div.field-share {
+  display: block;
+  clear: left;
+  float: left;
+  margin: 20px 0 0 30px;
+}
+
+
+.destroy {
+  background-color: #ea4335;
+  color: #FFFFFF;
+  border: none;
+  background: #EB5757;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  height: 30px
+}
+
+/*--------------------------------------*/
+
+.button_outer {
+  background: #f2f2f2;
+  border: 2px dashed #bdbdbd;
+  border-radius: 5px;
+  height: 200px;
+  width: 200px;
+  // display: inline-block;
+  position: relative;
+  overflow: hidden;
+  clear: left;
+  float: left;
+  margin: 20px 0 0 30px;
+}
+
+.btn_upload {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    font-size: 50px;
+    line-height: 59px;
+    display: flex;
+    align-items: center;
+    color: #bdbdbd;
+    cursor: pointer;
+  }
+}
+
+.btn_upload input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+// .fas {
+//   // z-index: 10;
+// }
+
+#imgFoto {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+}
+
+
+/*--------------------------------------*/
+
+div.actions {
+  margin: 40px 0 0 30px;
+  display: block;
+  clear: both;
+  float: left;
+}
+
+#sub {
+  background: #219653;
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  border: none;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  height: 30px;
+}
+
+.nav_photo {
+  // padding-bottom: 100vh;
+  height: auto;
+}
+
+.nav_bww {
+  height: 870px
+}
+
+label {
+  display: block;
+}
+
+footer {
+  height: 100%;
+  background-color: #F8F8F8;
+}
+
+.del {
+  float: left;
+  margin: 40px 0 0 30px;
+}
+
+#error_explanation {
+  text-align: center;
+  color: #ea4335;
+}
+
+
+/*--------------PROFILE-------------*/
+
+.header_profile {
+  position: relative;
+  height: 220px;
+  background-color: #FFFFFF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#pro_image {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  clip-path: circle(75px at 50% 50%);
+  float: left;
+  margin: 20px 0 0 30px;
+}
+
+.edit_profile {
+  position: absolute;
+  border-radius: 20px;
+  border: 2px solid #3c5999;
+  background-color: #FFFFFF;
+  color: #3c5999;
+  float: left;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  margin: 35px 0 0 0;
+  left: 17%;
+  height: 28px;
+}
+
+.header_profile h1 {
+  position: absolute;
+  left: 17%;
+  font-family: 'Roboto';
+  font-style: normal;
+  margin-top: 70px;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 53px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.info {
+  display: block;
+  position: absolute;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 130px 0 0 0;
+  text-decoration: none;
+  color: #828282;
+}
+
+
+.info_photos {
+  left: 17%;
+}
+
+.info_albums {
+  left: 25%;
+}
+
+.info_followings {
+  left: 33%;
+}
+.info_followers{
+  left: 44%;
+}
+
+.add {
+  position: absolute;
+  border-radius: 29px;
+  background-color: #219653;
+  color: #ffffff;
+  float: right;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  margin: 35px 0 0 0;
+  right: 7%;
+  bottom: 0%;
+  height: 35px;
+  width: 101px;
+}
+
+#content_profile {
+  flex-direction: column;
+  background-color: #ffffff;
+  // height: 100%;
+}
+.kami{
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.pagination{
+  display: inline-block;
+}
+
+.profile_photo {
+  display: inline-block;
+  width: 20%;
+  background-color: #ffffff;
+  margin: 30px 0 20px 0;
+  height: 250px;
+  float: left;
+
+}
+
+.profile_photo .photos {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: relative;
+}
+
+.title_photo {
+  margin-top: 5px;
+}
+
+.edit_photo {
+  position: absolute;
+  width: 37px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  border: none;
+  margin: -20px;
+}
+
+.fa-lock {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  border: none;
+  float:right;
+  margin:-240px 35px 0 0;
+  padding-top: 4px;
+}
+
+.lock{
+  margin: -250px 70px 0 0;
+}
+
+/*----------PROFILE-ALBUM----------*/
+.profile_album {
+  display: inline-block;
+  width: 25%;
+  background-color: #ffffff;
+  margin: 30px 0 20px 0;
+  height: 250px;
+  float: left;
+}
+
+.albums_rotate1 {
+  border: 1px solid #FFFFFF;
+  transform: rotate(8deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+}
+
+.albums_rotate2 {
+  border: 1px solid #FFFFFF;
+  transform: rotate(4deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+}
+
+.albums_rotate3 {
+  border: 1px solid #FFFFFF;
+  transform: rotate(0deg);
+  position: relative;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+}
+
+.profile_album .title_photo {
+  margin-top: 20px;
+}
+
+
+.count_photos {
+  position: absolute;
+  margin: -150px 0 0 120px;
+}
+
+.count_photos button {
+  width: 89px;
+  height: 89px;
+  color: #FFFFFF;
+  background-color: rgba(51, 51, 51, 0.2);
+  border-radius: 50%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  border: none;
+}
+
+/*---------------EDIT PROFILE-------------*/
+.avatar_change{
+  height: 130px;
+  width: 130px;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+}
+
+.change {
+  position: absolute;
+  width: 90px;
+  height: 30px;
+  opacity: 0.5;
+  border-radius: 5px;
+  top: 190px;
+  margin-left: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  cursor:pointer;
+
+}
+
+.info_basic {
+  position: absolute;
+  left: 970px;
+  top: 250px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #3C5999;
+  margin-top: 10px;
+}
+.edit_user {
+  position: absolute;
+  top: 285px;
+  display: inline;
+}
+.user_basic{
+  width: 85px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 15px;
+  margin-left: -95px;
+  padding: 10px 10px 0 0;
+  text-align: right;
+}
+#edit_profile {
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+  height: 40px;
+  width: 286px;
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+.edit_user_last_name {
+  position: absolute;
+  top: 330px;
+  display: inline;
+}
+.edit_user_email{
+  position: absolute;
+  top: 375px;
+  display: inline;
+}
+.edit_user_password{
+  position: absolute;
+  top: 420px;
+  display: inline;
+}
+.save_info_basiac {
+  position: absolute;
+  top: 450px;
+  left: 970px;
+  background: #219653;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: none;
+  width: 64px;
+  height: 30px;
+  color: #FFFFFF;
+}
+
+.info_pass{
+  position: absolute;
+  left: 970px;
+  top: 520px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #3C5999;
+}
+.edit_password{
+  position: absolute;
+  top: 540px;
+  display: inline;
+}
+.user_passwsord {
+  width: 170px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 15px;
+  margin-left: -195px;
+  padding: 10px 10px 0 0;
+  text-align: right;
+}
+.edit_new_password{
+  position: absolute;
+  top: 585px;
+  display: inline;
+}
+.edit_conf_password{
+  position: absolute;
+  top: 630px;
+  display: inline;
+}
+.save_info_pass{
+  position: absolute;
+  top: 720px;
+  left: 970px;
+  background: #219653;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: none;
+  width: 64px;
+  height: 30px;
+  color: #FFFFFF;
+}
+
+/*------FOLLOWINGS-------*/
+.profile_following {
+  display: inline-block;
+  width: 21%;
+  background: #F8F8F8;
+  margin: 30px 2% 20px 2%;
+  height: 250px;
+  float: left;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
+  // text-align: center;
+}
+.avt_following {
+  width: 120px;
+  height: 120px;
+  clip-path: circle(50px at 50% 50%);
+  display: block;
+  margin-left: 80px;
+}
+.user_name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #4F4F4F;
+  margin-bottom: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.following_photo,
+.following_album {
+  width: 60px;
+  height: 42px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+}
+
+.following_photo {
+  margin: 5px 20px 5px 0;
+}
+
+.following_album {
+  margin: 5px 0 5px 20px;
+}
+
+.unfollow button {
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 18px;
+  border: 2px solid #EB5757;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  background: linear-gradient(246.97deg, #EB5757 12.28%, #F2994A 64.91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*------FOLLOWERS-------*/
+.follow button {
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 18px;
+  border: 2px solid #EB5757;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  background: linear-gradient(246.97deg, #EB5757 12.28%, #F2994A 64.91%);
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  color: #EB5757;
+  background-clip: text;
+}
+
+/*---------------ADMIN-----------------*/
+.admin_link {
+  text-decoration: none;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #F8F8F8;
+  font-weight: 700;
+  font-size: 17px;
+}
+.admin_link:hover {
+  color: #F8F8F8;
+}
+/*---------------ADMIN PHOTOS-----------------*/
+.admin_form{
+  width: 23%;
+  height:230px;
+  display: inline-block;
+  margin: 20px 1% 20px 1%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+  float: left;
+}
+.manage_photo {
+  position: absolute;
+  width: 298px;
+  height: 230px;
+}
+.form_edit {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0.5;
+  margin-top: -20px;
+}
+.text_edit{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 14px;
+  color: #FFFFFF;
+  margin-bottom: 0;
+  padding: 5px 0 0 10px;
+  text-align: left;
+}
+.form_edit_photo{
+  width: 50px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 12px;
+  color: #FFFFFF;
+  border: none;
+  margin: -20px 5px -20px -20px;
+  float: right;
+}
+
+/*---------------ADMIN ALBUMS-----------------*/
+.admin_form_albums{
+  display: inline-block;
+  width: 23%;
+  height:230px;
+  background-color: #ffffff;
+  margin: 20px 1% 20px 1%;
+  background: #F2F2F2;
+  float: left;
+}
+.manage_album1{
+  border: 1px solid #FFFFFF;
+  transform: rotate(8deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+  margin: 15px 0 0 40px;
+}
+.manage_album2{
+  border: 1px solid #FFFFFF;
+  transform: rotate(4deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+  margin: 15px 0 0 40px;
+}
+.manage_album3{
+  border: 1px solid #FFFFFF;
+  transform: rotate(0deg);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 200px;
+  margin: 15px 0 0 40px;
+}
+/*----------ADMIN USERS-----------*/
+.table {
+  text-align: left;
+}
+.admin_edit{
+  background: #219653;
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  border: none;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  height: 30px;
+  position: absolute;
+}
+.admin_destroy{
+  background-color: #ea4335;
+  color: #FFFFFF;
+  border: none;
+  background: #EB5757;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  height: 30px;
+  margin-left: 45px;
+}
+
+.save_admin_user {
+  position: absolute;
+  top: 495px;
+  left: 970px;
+  background: #219653;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: none;
+  width: 64px;
+  height: 30px;
+  color: #FFFFFF;
+}
+#content_profile_admin{
+  flex-direction: column;
+  background-color: #ffffff;
+  height: 850px
+}

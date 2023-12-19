@@ -1,0 +1,58 @@
+<%= render "head/header"%>
+<section class="row">
+  <%= render "photos/nav_left" %>
+  <div class="col-xl-8 nav-bw px-0">
+    <div class="header_profile">
+      <%if not @user.avatar?%>
+        <%= image_tag("avatar_nil", alt:"Avater nil", id:"pro_image")%>
+      <%else%>
+        <%=image_tag(@user.avatar.url, alt: "Avatar user", id: "pro_image") %>
+      <%end%>
+      <%if @is_current%>
+        <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "edit_profile"%>
+      <%end%>
+      <h1><%= @user.first_name.capitalize() + ' ' + @user.last_name.capitalize()%></h1>
+      <%= link_to "#{@user.photos.count} PHOTOS | ", user_photos_path(@user.id), method: :get, class: "info info_photos"%>
+      <%= link_to "#{@user.albums.count} ALBUMS | ", user_albums_path(@user.id), method: :get, class: "info info_albums"%>
+      <%= link_to "#{@user.followings.count} FOLLOWINGS | ", followings_user_path(@user.id), method: :get, class: "info info_followings"%>
+      <%= link_to "#{@user.followers.count} FOLLOWERS", followers_user_path(@user.id), method: :get, class: "info info_followers"%>
+      <%# <%= link_to "#{@user.follow.count} PHOTOS  |", user_photos_path(@user.id), method: :get%>
+      <%# link_to "#{@user.photos.count} PHOTOS  |", user_photos_path(@user.id), method: :get%>
+      <%if @is_current%>
+        <%= button_to "Add Album", new_user_album_path(@user.id), method: :get, class: "add"%>
+      <%end%>
+    </div>
+    <div id="content_profile">
+      <%@user.albums.each do |album|%>
+        <%if @is_current%>
+          <div class="profile_album">
+            <%=image_tag(album.images.first.url, class: "albums_rotate1")%>
+            <%=image_tag(album.images.first.url, class: "albums_rotate2")%>
+            <%=image_tag(album.images.first.url, class: "albums_rotate3")%>
+            <div class= "count_photos">
+              <%= button_to "#{album.images.count} PHOTOS"%>
+            </div>
+            <%= button_to "EDIT", edit_album_path(album.id), method: :get, class: "edit_photo" %>
+            <p class="title_photo"><%= album.title%></p>
+            <%if album.is_private? && @is_current%>
+              <i class="fas fa-lock lock"></i>
+            <%end%>
+          </div>
+        <%else%>
+          <%if not album.is_private?%>
+            <div class="profile_album">
+              <%=image_tag(album.images.first.url, class: "albums_rotate1")%>
+              <%=image_tag(album.images.first.url, class: "albums_rotate2")%>
+              <%=image_tag(album.images.first.url, class: "albums_rotate3")%>
+              <div class= "count_photos">
+                <%= button_to "#{album.images.count} PHOTOS"%>
+              </div>
+              <p class="title_photo"><%= album.title%></p>
+            </div>
+          <%end%>
+        <%end%>
+      <% end%>
+    </div>
+  </div>
+  <%= render "photos/nav_right" %>
+</section>

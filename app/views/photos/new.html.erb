@@ -1,0 +1,11 @@
+<%= render "head/header"%>
+<section class="row">
+  <%= render "nav_left" %>
+  <div class="col-xl-8 nav-bw px-0 nav_bww">
+    <h4>New Photo</h4>
+    <%= render "form_photo", photo: @photo %>
+  </div>
+  <%= render "nav_right" %>
+  <footer>
+  </footer>
+</section>

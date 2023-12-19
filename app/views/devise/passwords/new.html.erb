@@ -1,0 +1,26 @@
+<%= render "head/header"%>
+<!------------------START MAIN----------------------->
+<div class="row justify-content-center">
+  <div class=" main col-auto px-0">
+    <!-----------Fotobook Login----------->
+    <p class="title"><%=t ".fotobook_login" %></p>
+    <!--------------ICON--------------->
+    <div class="frame-icon mt-4">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter-square"></i>
+    </div>
+    <div class="form-forgot-password mt-2">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="singup mt-2">
+          <%= f.label :email, class: "font-first email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email", id:"formregister" %>
+        </div>
+        <div class="mt-4">
+          <%= f.submit "Send me reset password instructions", id: "send-mail", data: {turbo: false} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

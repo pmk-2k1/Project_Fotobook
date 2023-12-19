@@ -1,0 +1,46 @@
+<%= render "head/header"%>
+<section class="row">
+  <%= render "nav_left" %>
+  <div class="col-xl-8 nav-bw px-0">
+    <div class="header_profile">
+      <%if not @user.avatar?%>
+        <%= image_tag("avatar_nil", alt:"Avater nil", id:"pro_image")%>
+      <%else%>
+        <%=image_tag(@user.avatar.url, alt: "Avatar user", id: "pro_image") %>
+      <%end%>
+      <%if @is_current%>
+        <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "edit_profile"%>
+      <%end%>
+      <h1><%= @user.first_name.capitalize() + ' ' + @user.last_name.capitalize()%></h1>
+      <%= link_to "#{@user.photos.count} PHOTOS | ", user_photos_path(@user.id), method: :get, class: "info info_photos"%>
+      <%= link_to "#{@user.albums.count} ALBUMS | ", user_albums_path(@user.id), method: :get, class: "info info_albums"%>
+      <%= link_to "#{@user.followings.count} FOLLOWINGS | ", followings_user_path(@user.id), method: :get, class: "info info_followings"%>
+      <%= link_to "#{@user.followers.count} FOLLOWERS", followers_user_path(@user.id), method: :get, class: "info info_followers"%>
+      <%if @is_current%>
+        <%= button_to "Add Photo", new_user_photo_path(@user.id), method: :get, class: "add"%>
+      <%end%>
+    </div>
+    <div id="content_profile">
+      <%@user.photos.each do |photo|%>
+        <%if @is_current%>
+          <div class="profile_photo">
+            <%=image_tag(photo.image.url, class: "photos") %>
+            <%= button_to "EDIT", edit_photo_path(photo.id), method: :get, class: "edit_photo" %>
+            <p class="title_photo"><%= photo.title%></p>
+            <%if photo.is_private?%>
+              <i class="fas fa-lock"></i>
+            <%end%>
+          </div>
+        <%else%>
+          <%if not photo.is_private?%>
+            <div class="profile_photo">
+              <%=image_tag(photo.image.url, class: "photos") %>
+              <p class="title_photo"><%= photo.title%></p>
+            </div>
+          <%end%>
+        <%end%>
+      <% end%>
+    </div>
+  </div>
+  <%= render "nav_right" %>
+</section>

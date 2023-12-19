@@ -1,0 +1,56 @@
+<%= form_with model: @user do |form| %>
+  <hr />
+  <div>
+    <% if not current_user.avatar?%>
+      <%= image_tag("avatar_nil", class: "avatar_change")%>
+    <% else %>
+      <%= image_tag(current_user.avatar.url, class: "avatar_change")%>
+    <% end%>
+    <%= form.file_field :avatar, accept: "image/png, image/jpg", class: "change" %>
+  </div>
+  <p class="info_basic">Basic Information</p>
+  <div class="edit_user">
+    <%= form.label :first_name, class: "user_basic" %>
+    <%= form.text_field :first_name, id:"edit_profile", placeholder: "First Name"%>
+  </div>
+  <div class="edit_user_last_name">
+    <%= form.label :last_name, class: "user_basic" %>
+    <%= form.text_field :last_name, id:"edit_profile", placeholder: "Last Name"%>
+  </div>
+  <div class="edit_user_email">
+    <%= form.label :email, class: "user_basic" %>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", id:"edit_profile", placeholder: "Email"%>
+  </div>
+  <div class="actions">
+    <%= form.submit class: "save_info_basiac"%>
+  </div>
+<% end %>
+
+
+<%= form_for(user, as: current_user, url: registration_path(current_user), html: { method: :put }) do |form| %>
+  <%= render "devise/shared/error_messages", resource: user %>
+
+  <p class="info_pass">Password</p>
+  <div class="edit_password">
+    <%= form.label :current_password, class: "user_passwsord" %>
+    <%= form.password_field :current_password, autocomplete: "current-password", id:"edit_profile", placeholder: "Password" %>
+  </div>
+
+  <div class="edit_new_password">
+    <%= form.label :new_password, class: "user_passwsord" %>
+    <%= form.password_field :password, autocomplete: "new-password", id:"edit_profile", placeholder: "New Password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="edit_conf_password">
+    <%= form.label :password_confirmation, class: "user_passwsord" %>
+    <%= form.password_field :password_confirmation, autocomplete: "new-password", id:"edit_profile", placeholder: "Confirm New Password" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update" ,class: "save_info_pass" %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<%= form_with model: @photo do |form| %>
+  <hr />
+  <div class="field-title">
+    <%= form.label :title %>
+    <%= form.text_field :title, size: "40" %>
+  </div>
+  <div class="field-description">
+    <%= form.label :description %>
+    <%= form.text_area :description, size: "50x5" %>
+  </div>
+  <div class= "field-share">
+    <%= form.label :is_private %>
+    <%= form.select :is_private, [["Public", false], ["Private", true]]%>
+  </div>
+  <div class="button_outer">
+    <div class="btn_upload">
+      <%= form.file_field :image, accept: "image/jpeg, image/gif, image/png, image/jpg", id: "upload_image" %>
+      <i class="fas fa-plus"></i>
+    </div>
+    <img id="imgFoto">
+  </div>
+  <div class="actions">
+    <%= form.submit id: "sub"%>
+  </div>
+<% end %>

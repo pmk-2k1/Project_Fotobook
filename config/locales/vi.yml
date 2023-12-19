@@ -1,0 +1,24 @@
+vi:
+  users:
+    login:
+      email: "Email"
+      password: "Mật khẩu"
+      fotobook_login: "Đăng nhập Fotobook"
+      login: "Đăng nhập"
+      forgot_password: "Quên mật khẩu?"
+      create_account: "Tạo tài khoản"
+
+    signup:
+      fotobook_signup: "Đăng ký Fotobook"
+      first_name: "Tên"
+      last_name: "Họ"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      singup: "Đăng ký"
+      email: "Email"
+
+
+  layouts:
+    application:
+      search: "Tìm kiếm"
+      login: "Đăng nhập"

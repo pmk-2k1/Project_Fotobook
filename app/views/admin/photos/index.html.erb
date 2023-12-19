@@ -1,0 +1,22 @@
+  <%= render "admin/header"%>
+<section class="row">
+  <%= render "admin/nav_left" %>
+  <div class="col-xl-8 nav-bw px-0 nav_bww">
+    <div id="content_profile">
+      <%@photos.each do |photo|%>
+        <div class="admin_form">
+          <%= image_tag(photo.image.url, class: "manage_photo")%>
+          <div class="form_edit">
+            <p class="text_edit">Lorem ipsum dolor sit amet...</p>
+            <%= button_to "EDIT", edit_photo_path(photo.id), method: :get, class: "form_edit_photo" %>
+          </div>
+        </div>
+      <%end%>
+      <div class="kami">
+        <%= paginate @photos, window: 2 %>
+      </div>
+    </div>
+  </div>
+  <%= render "admin/nav_right" %>
+  <%=render 'admin/footer'%>
+</section>

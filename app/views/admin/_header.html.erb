@@ -1,0 +1,38 @@
+<!---------------START HEADER---------------->
+<header>
+  <div class="row ">
+    <div class="col col-xl-2">
+      <%if current_user.admin?%>
+        <%= link_to "Fotobook Admin" ,admin_photos_path, method: :get, class: "fotobook"%>
+      <%end%>
+    </div>
+    <div class="col col-xl-6 px-0">
+      <form class="example mt-1" action="action_page.php">
+        <%# <%= form.search_field :name %>
+        <input type="text" placeholder="Search..." name="search" id="search">
+      </form>
+    </div>
+    <div class="col col-xl-2 avatar">
+      <% if user_signed_in?%>
+        <% if not current_user.avatar?%>
+          <%=image_tag "avatar_nil"%>
+        <% else %>
+          <%= image_tag(current_user.avatar.url)%>
+        <% end%>
+        <%= link_to current_user.first_name.capitalize() + ' ' + current_user.last_name.capitalize(), user_path( current_user.id), class: "name"%>
+        <%=link_to "User", feed_path(current_user.id), class: "admin_link", method: :get%>
+      <%end%>
+    </div>
+    <div class="col col-xl-2">
+      <p class="log">
+        <% if user_signed_in?%>
+          <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "signed"%>
+          <%# <a href="#" class="login"><%=t ".login"%><%#</a> %>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "signed"%>
+        <%end%>
+      </p>
+    </div>
+  </div>
+</header>
+<!---------------END HEADER---------------->

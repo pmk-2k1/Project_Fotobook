@@ -1,0 +1,49 @@
+<%= render "head/header"%>
+<section class="row">
+  <%= render "nav_left" %>
+  <div class="col-xl-8 nav-bw px-0">
+    <div class="header_profile">
+      <%if not @user.avatar?%>
+        <%= image_tag("avatar_nil", alt:"Avater nil", id:"pro_image")%>
+      <%else%>
+        <%=image_tag(@user.avatar.url, alt: "Avatar user" , id: "pro_image") %>
+      <%end%>
+      <%if @is_current%>
+        <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "edit_profile"%>
+      <%end%>
+      <h1><%= @user.first_name.capitalize() + ' ' + @user.last_name.capitalize()%></h1>
+      <%= link_to "#{@user.photos.count} PHOTOS | ", user_photos_path(@user.id), method: :get, class: "info info_photos"%>
+      <%= link_to "#{@user.albums.count} ALBUMS | ", user_albums_path(@user.id), method: :get, class: "info info_albums"%>
+      <%= link_to "#{@user.followings.count} FOLLOWINGS | ", followings_user_path(@user.id), method: :get, class: "info info_followings"%>
+      <%= link_to "#{@user.followers.count} FOLLOWERS", followers_user_path(@user.id), method: :get, class: "info info_followers"%>
+      <%# <%= link_to "#{@user.follow.count} PHOTOS  |", user_photos_path(@user.id), method: :get%>
+      <%# link_to "#{@user.photos.count} PHOTOS  |", user_photos_path(@user.id), method: :get%>
+      <%#= button_to "Add Photo", new_user_photo_path(@user.id), method: :get, class: "add"%>
+    </div>
+    <div id="content_profile">
+      <%@user.followings.each do |following|%>
+        <div class="profile_following">
+          <%if not following.avatar?%>
+            <%=image_tag("avatar_nil", class: "avt_following")%>
+          <%else%>
+            <%=image_tag(following.avatar.url, class: "avt_following")%>
+          <%end%>
+          <%# <p class="user_name"><%= following.first_name.capitalize() + ' ' + following.last_name.capitalize()%>
+          <%= link_to following.first_name.capitalize() + ' ' + following.last_name.capitalize(),user_photos_path(following), class: "user_name"%>
+          <p class="following_photo"> <%=following.photos.count %><br>
+            PHOTOS
+          </p>
+          <p class="following_album"> <%=following.albums.count %><br>
+            ALBUMS
+          </p>
+          <br>
+          <%# <button type="submit" value="unfollow" class="unfollow">unfollow</button> %>
+          <% if @is_current%>
+            <%= button_to "unfollow", unfollow_user_path(following.id), method: "POST", form_class: "unfollow"%>
+          <%end%>
+        </div>
+      <% end%>
+    </div>
+  </div>
+  <%= render "nav_right" %>
+</section>

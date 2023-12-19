@@ -1,0 +1,14 @@
+<div class="col-xl-2 min-vh-100 nav-left px-0">
+  <div class="sticky-top">
+    <%if user_signed_in?%>
+      <ul class="mb-0">
+        <li class="nav-item">
+          <%=link_to "Feed",feed_path(current_user.id), method: :get, class: "nav-link feeds"%>
+        </li>
+        <li class="nav-item">
+          <%=link_to "Discover",discover_photos_path(current_user.id), method: :get, class: "nav-link discover"%>
+        </li>
+      </ul>
+    <%end%>
+  </div>
+</div>

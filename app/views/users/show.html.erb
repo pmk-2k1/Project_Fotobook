@@ -1,0 +1,33 @@
+<%= render "head/header"%>
+<section class="row">
+  <%= render "nav_left" %>
+  <div class="col-xl-8 nav-bw px-0">
+    <div class="header_profile">
+      <%if not current_user.avatar?%>
+        <%= image_tag("avatar_nil", alt:"Avater nil", id:"pro_image")%>
+      <%else%>
+        <%=image_tag(current_user.avatar.url, alt: "Avatar user", id: "pro_image") %>
+      <%end%>
+      <%= button_to "Edit Profile", edit_user_path(current_user), method: :get, class: "edit_profile"%>
+      <h1><%= current_user.first_name.capitalize() + ' ' + current_user.last_name.capitalize()%></h1>
+      <%= link_to "#{@user_photo.count} PHOTOS | ", user_photos_path(current_user.id), method: :get, class: "info info_photos"%>
+      <%= link_to "#{current_user .albums.count} ALBUMS | ", user_albums_path(current_user.id), method: :get, class: "info info_albums"%>
+      <%= link_to "#{current_user.followings.count} FOLLOWINGS | ", followings_user_path(current_user.id), method: :get, class: "info info_followings"%>
+      <%= link_to "#{current_user.followers.count} FOLLOWERS", followers_user_path(current_user.id), method: :get, class: "info info_followers"%>
+      <%= button_to "Add Photo", new_user_photo_path(current_user.id), method: :get, class: "add"%>
+    </div>
+    <div id="content_profile">
+      <%@user_photo.each do |photo|%>
+        <div class="profile_photo">
+          <%=image_tag(photo.image.url, class: "photos") %>
+          <%= button_to "EDIT", edit_photo_path(photo.id), method: :get, class: "edit_photo" %>
+          <p class="title_photo"><%= photo.title%></p>
+          <%if photo.is_private?%>
+            <i class="fas fa-lock"></i>
+          <%end%>
+        </div>
+      <% end%>
+    </div>
+  </div>
+  <%= render "nav_right" %>
+</section>

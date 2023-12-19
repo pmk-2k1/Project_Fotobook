@@ -1,0 +1,22 @@
+<%= render "head/header"%>
+<section class="row">
+  <%if current_user.admin?%>
+    <%=render 'admin/nav_left'%>
+  <%else%>
+    <%= render "photos/nav_left" %>
+  <%end%>
+  <div class="col-xl-8 nav-bw px-0 nav_bww">
+    <h4>Edit Album</h4>
+    <%= render "form_album", album: @album %>
+    <div class="del">
+      <%= button_to "Destroy this album", @album, method: :delete, data:{confirm: "Are you sure?" },class: "destroy" %>
+    </div>
+  </div>
+  <%if current_user.admin?%>
+    <%=render 'admin/nav_right'%>
+  <%else%>
+    <%= render "photos/nav_right" %>
+  <%end%>
+  <footer>
+  </footer>
+</section>

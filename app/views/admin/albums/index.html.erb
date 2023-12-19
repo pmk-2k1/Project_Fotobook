@@ -1,0 +1,24 @@
+  <%= render "admin/header"%>
+<section class="row">
+  <%= render "admin/nav_left" %>
+  <div class="col-xl-8 nav-bw px-0 nav_bww">
+    <div id="content_profile">
+      <%@albums.each do |album|%>
+        <div class="admin_form_albums">
+          <%=image_tag(album.images.first.url, class: "manage_album1")%>
+          <%=image_tag(album.images.first.url, class: "manage_album2")%>
+          <%=image_tag(album.images.first.url, class: "manage_album3")%>
+          <div class="form_edit">
+            <p class="text_edit">Lorem ipsum dolor sit amet...</p>
+            <%= button_to "EDIT", edit_album_path(album.id), method: :get, class: "form_edit_photo" %>
+          </div>
+        </div>
+      <%end%>
+      <div class="kami">
+        <%= paginate @albums, window: 2 %>
+      </div>
+    </div>
+  </div>
+  <%= render "admin/nav_right" %>
+  <%=render 'admin/footer'%>
+</section>

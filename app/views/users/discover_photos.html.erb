@@ -1,0 +1,33 @@
+<%= render "head/header"%>
+<section class="row">
+  <%= render "nav_left" %>
+  <div class="col-xl-8 nav-bw px-0">
+    <%=button_to "Photo", discover_photos_path(current_user.id), method: :get, id: "photo"%>
+    <%# <button type="submit" id="photo"><%=t ".photo"%><%#</button> %>
+    <%=button_to "Album", discover_albums_path(current_user.id), method: :get, id: "album"%>
+    <%# <button type="submit" id="album"><%=t ".album"%><%#</button> %>
+    <%@users.each do |user|%>
+      <% user.photos.each do |photo|%>
+        <%if not photo.is_private?%>
+          <div class="pic">
+            <%= image_tag(photo.image.url,class:"screen")%>
+            <% if not user.avatar?%>
+              <%=image_tag("avatar_nil",class: "rounded-circle")%>
+            <%else%>
+              <%= image_tag(user.avatar.url, class: "rounded-circle")%>
+            <%end%>
+            <%= link_to user.first_name.capitalize() + ' ' + user.last_name.capitalize(),user_photos_path(user), class: "user"%>
+            <br>
+            <br>
+            <p class= "tit"><%=photo.title%></p>
+            <p class="tex"><%= photo.description%></p>
+            <i class="fas fa-heart">123</i>
+            <p class="date"><%= photo.created_at%></p>
+          </div>
+        <%end%>
+      <%end%>
+    <%end%>
+    <div><i class="fas fa-spinner fa-spin fa-3x"></i></div>
+  </div>
+  <%= render "nav_right" %>
+</section>

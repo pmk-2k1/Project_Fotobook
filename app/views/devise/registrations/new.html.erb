@@ -1,0 +1,47 @@
+<%= render "head/header"%>
+<!------------------START MAIN----------------------->
+<div class="row justify-content-center">
+  <div class=" main col-auto px-0">
+    <!-----------Fotobook Login----------->
+    <p class="title"><%=t ".fotobook_signup" %></p>
+    <!--------------ICON--------------->
+    <div class="frame-icon mt-4">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter-square"></i>
+    </div>
+    <!------------FORM SIGNUP----------------->
+    <div class="form-signup mt-2">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="singup mt-2">
+          <%= f.label :first_name, class: "font-first" %>
+          <%=f.text_field :first_name, placeholder: "First name", id:"formregister"%>
+        </div>
+        <div class="singup mt-2">
+          <%= f.label :last_name, class: "font-last" %>
+          <%=f.text_field :last_name, placeholder: "Last name", id:"formregister"%>
+        </div>
+        <div class="singup mt-2">
+          <%= f.label :email, class: "font-last email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", id:"formregister"%>
+        </div>
+        <div class="singup mt-2">
+          <%= f.label :password, class: "font-last new-pass" %>
+          <% if @minimum_password_length %>
+            <em class=" min_pass">(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", id:"formregister"%>
+        </div>
+        <div class="singup mt-2">
+          <%= f.label :password_confirmation, class: "font-last confirm-pass"%>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password", id: "formregister" %>
+        </div>
+        <div class="singup mt-3">
+          <%= f.submit "Sign up", id: "button-singup", data: {turbo: false} %>
+        </div>
+      <% end %>
+    </div>
+    <%# <%= render "devise/shared/links" %>
+  </div>
+</div>
